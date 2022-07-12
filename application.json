@@ -1,0 +1,10 @@
+{
+  "ding": {
+    "appKey": "",
+    "appSecret": "",
+    "agentId": ""
+  },
+  "datasource": {
+    "url": ""
+  }
+}
