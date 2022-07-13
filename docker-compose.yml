@@ -1,0 +1,12 @@
+version: "3"
+services:
+  go_ding_robot:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      APP_KEY: ""
+      APP_SECRET: ""
+    volumes:
+      - /yourvolume:/usr/data

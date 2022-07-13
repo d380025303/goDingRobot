@@ -9,10 +9,14 @@ import (
 var db *sql.DB
 
 func InitSqlite(location string) {
-	myDb, _ := sql.Open("sqlite3", location)
-	err := myDb.Ping()
+	log.Println("init sqlite3...")
+	myDb, err := sql.Open("sqlite3", location)
 	if err != nil {
-		log.Fatal("连接数据库失败: ", err)
+		panic(err)
+	}
+	err = myDb.Ping()
+	if err != nil {
+		panic("连接数据库失败: ")
 	}
 	db = myDb
 	InsertOrUpdateSqlByStmt(`CREATE TABLE IF NOT EXISTS message ( 
@@ -25,7 +29,7 @@ func InitSqlite(location string) {
 func GetDb() *sql.DB {
 	myDb := db
 	if myDb == nil {
-		log.Fatal("db not init...")
+		panic("db not init...")
 	}
 	return myDb
 }
