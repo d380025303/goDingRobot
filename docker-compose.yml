@@ -8,5 +8,7 @@ services:
     environment:
       APP_KEY: ""
       APP_SECRET: ""
+      WX_APP_ID: ""
+      WX_APP_SECRET: ""
     volumes:
       - /yourvolume:/usr/data

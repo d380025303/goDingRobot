@@ -1,0 +1,14 @@
+{
+  "ding": {
+    "appKey": "",
+    "appSecret": "",
+    "agentId": ""
+  },
+  "wx": {
+    "appId": "",
+    "appSecret": ""
+  },
+  "datasource": {
+    "url": "C:\\dev\\daixinmini\\goDingRobot\\test.db"
+  }
+}
