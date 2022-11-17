@@ -18,6 +18,7 @@ type GlobalConfig struct {
 type Wx struct {
 	AppId     string `json:"appId"`
 	AppSecret string `json:"appSecret"`
+	Token     string `json:"token"`
 }
 
 type Ding struct {
@@ -50,6 +51,8 @@ func handleConfig() *GlobalConfig {
 	flag.StringVar(&wxAppId, "wxAppId", "", "公众号id")
 	var wxAppSecret string
 	flag.StringVar(&wxAppSecret, "wxAppSecret", "", "公众号Secret")
+	var wxToken string
+	flag.StringVar(&wxToken, "wxToken", "", "公众号token")
 
 	flag.Parse()
 
@@ -66,6 +69,7 @@ func handleConfig() *GlobalConfig {
 			Wx: Wx{
 				AppId:     wxAppId,
 				AppSecret: wxAppSecret,
+				Token:     wxToken,
 			},
 		}
 	} else {

@@ -10,5 +10,6 @@ services:
       APP_SECRET: ""
       WX_APP_ID: ""
       WX_APP_SECRET: ""
+      WX_TOKEN: ""
     volumes:
       - /yourvolume:/usr/data

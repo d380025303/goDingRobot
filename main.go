@@ -23,6 +23,7 @@ func main() {
 	myGlobalConfig := handleConfig()
 	url := myGlobalConfig.DataSource.Url
 	ding.NewDingRobot(myGlobalConfig.Ding.AppKey, myGlobalConfig.Ding.AppSecret)
+	wx.NewWx(myGlobalConfig.Wx.AppId, myGlobalConfig.Wx.AppSecret, myGlobalConfig.Wx.Token)
 
 	db.InitSqlite(url)
 	http.HandleFunc("/", IndexHandler)

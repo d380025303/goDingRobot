@@ -11,8 +11,9 @@ import (
 )
 
 var ServeDingRobotPrefix = "/dingRobot"
-var appKey = ""
-var appSecret = ""
+var appKey string
+var appSecret string
+var token = ""
 
 func NewDingRobot(inAppKey string, inAppSecret string) {
 	appKey = inAppKey
@@ -45,7 +46,7 @@ func checkConfig() bool {
 
 func HandleDingRobot(w http.ResponseWriter, r *http.Request) {
 	//uri := r.RequestURI
-	if checkConfig() {
+	if !checkConfig() {
 		fmt.Fprintf(w, "钉钉未配置")
 		return
 	}

@@ -6,7 +6,8 @@
   },
   "wx": {
     "appId": "",
-    "appSecret": ""
+    "appSecret": "",
+    "token": ""
   },
   "datasource": {
     "url": "C:\\dev\\daixinmini\\goDingRobot\\test.db"
