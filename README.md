@@ -1,6 +1,7 @@
 # 使用钉钉机器人 or 微信公众号消息，实现简单的备忘录，
 
 ![image](https://user-images.githubusercontent.com/31104430/178475816-6a41146c-f66c-4ab1-b6ea-e42b73f3a8ba.png)
+![Dingtalk_20221117175820](https://user-images.githubusercontent.com/31104430/202418302-e54a8342-1a37-4118-9854-03e063b3431d.jpg)
 
 # 配置
 ```
