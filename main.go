@@ -1,17 +1,17 @@
 package main
 
 import (
-	"fmt"
 	"goDingRobot/db"
 	"goDingRobot/ding"
 	"goDingRobot/wx"
+	"log"
 	"net/http"
 	"strings"
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	uri := r.RequestURI
-	fmt.Println(uri)
+	log.Println(uri)
 	if strings.HasPrefix(uri, ding.ServeDingRobotPrefix) {
 		ding.HandleDingRobot(w, r)
 	} else if strings.HasPrefix(uri, wx.ServerWxPrefix) {

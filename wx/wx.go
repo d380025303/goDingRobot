@@ -26,6 +26,7 @@ func NewWx(inAppId string, inAppSecret string, inToken string) {
 
 func checkConfig() bool {
 	if appId == "" || appSecret == "" {
+		log.Println(fmt.Sprintf("微信未配置, appId: %v, appSecret: %v", appId, appSecret))
 		return false
 	}
 	return true

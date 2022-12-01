@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"goDingRobot/robot"
+	"log"
 	"net/http"
 )
 
@@ -17,7 +18,7 @@ var token = ""
 
 func NewDingRobot(inAppKey string, inAppSecret string) {
 	appKey = inAppKey
-	appKey = inAppSecret
+	appSecret = inAppSecret
 }
 
 func HmacSha256(key, data string) []byte {
@@ -34,11 +35,16 @@ func checkSign(r *http.Request) bool {
 	b := HmacSha256(appSecret, stringToSign)
 	mySign := base64.StdEncoding.EncodeToString(b)
 	sign := header.Get("sign")
-	return mySign == sign
+	if mySign == sign {
+		return true
+	}
+	log.Println(fmt.Sprintf("签名校验失败, timestamp: %v, sign: %v", timestamp, sign))
+	return false
 }
 
 func checkConfig() bool {
 	if appKey == "" || appSecret == "" {
+		log.Println(fmt.Sprintf("钉钉未配置, appKey: %v, appSecret: %v", appKey, appSecret))
 		return false
 	}
 	return true
